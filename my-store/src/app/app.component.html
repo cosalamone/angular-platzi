@@ -1,3 +1,20 @@
+<!-- [ngSwitch]\-->
+<input type="text" required [(ngModel)]="person.name" />
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'constanza'">My name is Constanza</p>
+  <p *ngSwitchCase="'maria'">My name is Maria</p>
+  <p *ngSwitchCase="'nicolas'">My name is Nicolas</p>
+  <p *ngSwitchDefault>No hace match</p>
+</div>
+<!--
+<p *ngIf="person.name=='constanza'">My name is Constanza</p>
+<p *ngIf="person.name=='maria'">My name is Maria</p>
+<p *ngIf="person.name=='nicolas'">My name is Nicolas</p>
+\-->
+
+
+<hr>
+
 <!-- ngFor para OBJETOS \-->
 <h1>*nfFor Objects</h1>
 <div *ngFor="let product of products">
@@ -7,6 +24,7 @@
 
 </div>
 
+<hr>
 
 <!-- ngFor Sirve para iterar un array \-->
 <h1>*ngFor</h1>
@@ -22,6 +40,7 @@
   </li>
 </ul>
 
+<hr>
 
 <!-- ngIf \-->
 <h1>*ngIf</h1>

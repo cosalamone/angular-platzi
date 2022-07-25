@@ -23,20 +23,17 @@ export class AppComponent {
     {
       name: "haworthia",
       price: 200,
-      image: "./assets/images/haworthia_fasciata.jpg"
-
+      image: "./assets/images/haworthia_fasciata.jpg",
     },
     {
       name: "graptopetalum",
       price: 350,
-      image: "./assets/images/graptopetalum.jpg"
-
+      image: "./assets/images/graptopetalum.jpg",
     },
     {
       name: "sedum-burrito",
       price: 400,
-      image: "./assets/images/sedumburrito.jpg"
-
+      image: "./assets/images/sedumburrito.jpg",
     }
   ]
 
