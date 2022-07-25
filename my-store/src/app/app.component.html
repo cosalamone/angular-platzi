@@ -1,4 +1,6 @@
-<!-- EVENT BINDING \-->
+
+
+<!-- EVENT BINDING - Click \-->
 
 <h1>Eventos</h1>
 <button [disabled]="buttonDisable">Enviar</button>
@@ -6,6 +8,20 @@
 <p>Edad {{person.age}}</p>
 <button (click)="increaseAge()">Age ++</button>
 
+<!-- EVENT BINDING - Scroll \-->
+<div class = "box" (scroll)="onScroll($event)"> <!-- Forma para caputar eventos: $event \-->
+
+<p>Lorem ipsum dolor sit amet consectetur adipiscing elit turpis, justo senectus
+  bibendum nisl dictum pretium aenean ullamcorper sodales, urna metus ridiculus
+  risus magna congue porta. Pellentesque sociis aptent platea semper fringilla
+  nulla vulputate ligula diam cubilia, sociosqu faucibus sodales non etiam
+  condimentum sollicitudin congue metus magnis, venenatis vivamus cum ac felis
+  penatibus at habitant vestibulum. </p>
+</div>
+
+<!-- EVENT BINDING - Inmput \-->
+<p>Nombre {{person.name}}</p>
+<input types="text" [value]="person.name" (keyup)="changeName($event)"/>
 
 <hr>
 
