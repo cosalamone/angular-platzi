@@ -1,14 +1,27 @@
-<!-- NGMODEL - Click \-->
+<!-- ngIf \-->
+<h1>*ngIf</h1>
+<input type="text" required [(ngModel)]="person.name" />
+
+<p *ngIf="person.name=='constanza'">My name is Constanza</p>
+<p *ngIf="person.name=='nicolas'&& person.age == 18; else elseBlock">My name is Nicolas</p>
+
+<ng-template #elseBlock>
+  <p>No se cumplieron los requisitos</p>
+</ng-template>
+
+<hr>
+
+<!-- NGMODEL \-->
 <h1>Ng Model</h1>
 <p>Nombre {{ person.name }}</p>
-<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name"/>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name" />
 <p>Valid: {{ nameInput.valid }}</p>
 
 <p>Edad {{ person.age }}</p>
-<input type="number" max="50" min="18" required #ageInput="ngModel" [(ngModel)]="person.age"/>
+<input type="number" max="50" min="18" required #ageInput="ngModel" [(ngModel)]="person.age" />
 <p>Valid: {{ ageInput.valid }}</p>
 
-
+<hr>
 
 <!-- EVENT BINDING - Click \-->
 
@@ -19,19 +32,20 @@
 <button (click)="increaseAge()">Age ++</button>
 
 <!-- EVENT BINDING - Scroll \-->
-<div class = "box" (scroll)="onScroll($event)"> <!-- Forma para caputar eventos: $event \-->
+<div class="box" (scroll)="onScroll($event)">
+  <!-- Forma para caputar eventos: $event \-->
 
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit turpis, justo senectus
-  bibendum nisl dictum pretium aenean ullamcorper sodales, urna metus ridiculus
-  risus magna congue porta. Pellentesque sociis aptent platea semper fringilla
-  nulla vulputate ligula diam cubilia, sociosqu faucibus sodales non etiam
-  condimentum sollicitudin congue metus magnis, venenatis vivamus cum ac felis
-  penatibus at habitant vestibulum. </p>
+  <p>Lorem ipsum dolor sit amet consectetur adipiscing elit turpis, justo senectus
+    bibendum nisl dictum pretium aenean ullamcorper sodales, urna metus ridiculus
+    risus magna congue porta. Pellentesque sociis aptent platea semper fringilla
+    nulla vulputate ligula diam cubilia, sociosqu faucibus sodales non etiam
+    condimentum sollicitudin congue metus magnis, venenatis vivamus cum ac felis
+    penatibus at habitant vestibulum. </p>
 </div>
 
 <!-- EVENT BINDING - Inmput \-->
 <p>Nombre {{person.name}}</p>
-<input types="text" [value]="person.name" (keyup)="changeName($event)"/>
+<input types="text" [value]="person.name" (keyup)="changeName($event)" />
 
 <hr>
 
@@ -41,11 +55,11 @@ son específicos para propiedades de elemntos HTML, para configuración de propi
 
 <h1>Propiedades</h1>
 <button [disabled]="buttonDisable">Enviar</button>
-<input types="text" [value]="name"/>
+<input types="text" [value]="name" />
 <progress max="100" [value]="age"></progress>
 <img [src]="img" width="100px">
 
-<input types="text" [value]="person.name"/>
+<input types="text" [value]="person.name" />
 <progress max="100" [value]="person.age"></progress>
 <img [src]="person.avatar" width="100px">
 
@@ -56,4 +70,4 @@ sirve para ingresar contenido donde necesitamos renderizarlo (ingresar el conten
 <h2>{{"Hola mundo".repeat(3)}}</h2>
 <p>3+3 = {{3+3}}</p>
 <h3>Hola, soy {{name}} y tengo {{age}}</h3>
-<img src={{img}} alt="imgen"  width="100px">
+<img src={{img}} alt="imgen" width="100px">
