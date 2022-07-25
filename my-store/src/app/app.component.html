@@ -17,13 +17,14 @@
 
 <!-- ngFor para OBJETOS \-->
 <h1>*nfFor Objects</h1>
+<div class="products--grid">
 <div *ngFor="let product of products">
-  <img [src]="product.image" alt="" width="150px">
+  <img [src]="product.image" alt="">
   <h2>{{product.price}}</h2>
   <p>{{product.name}}</p>
 
 </div>
-
+</div>
 <hr>
 
 <!-- ngFor Sirve para iterar un array \-->
