@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Product } from './product.model';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,6 +19,27 @@ export class AppComponent {
   }
   names: string[] = ["constanza", "nicolas", "ana"];
   newName = "";
+  products: Product[] = [
+    {
+      name: "haworthia",
+      price: 200,
+      image: "./assets/images/haworthia_fasciata.jpg"
+
+    },
+    {
+      name: "graptopetalum",
+      price: 350,
+      image: "./assets/images/graptopetalum.jpg"
+
+    },
+    {
+      name: "sedum-burrito",
+      price: 400,
+      image: "./assets/images/sedumburrito.jpg"
+
+    }
+  ]
+
 
   toggleButton() {
     this.buttonDisable = !this.buttonDisable;
@@ -35,13 +58,13 @@ export class AppComponent {
     const elemento = event.target as HTMLInputElement;
     this.person.name = elemento.value;
   }
-addName(){
-  this.names.push(this.newName);
-  this.newName = "";
-}
+  addName() {
+    this.names.push(this.newName);
+    this.newName = "";
+  }
 
-deleteName(index:number){
-  this.names.splice(index,1);
-}
+  deleteName(index: number) {
+    this.names.splice(index, 1);
+  }
 
 }
