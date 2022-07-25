@@ -11,9 +11,9 @@
 
   div {
     img {
-      width: 100%;
+      width: 90%;
       border-radius: 10px;
-      height: 250px;
+      height: 300px;
     }
 
     h2,
@@ -24,6 +24,21 @@
   }
 }
 
+.styleDiv{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+}
+
+.message-error{
+  background-color: rgb(216, 57, 57);
+  color: white;
+  opacity: 0;
+  transition: all linear .5s;
+  &.invalid {
+    opacity: 1;
+  }
+}
+
 @media screen and (min-width:40em) {
   .products--grid {
     display: grid;
@@ -31,3 +46,4 @@
     grid-gap: 15px;
   }
 }
+
