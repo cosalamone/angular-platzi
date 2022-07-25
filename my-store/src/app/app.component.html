@@ -1,3 +1,13 @@
+<!-- NGMODEL - Click \-->
+<h1>Ng Model</h1>
+<p>Nombre {{ person.name }}</p>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="person.name"/>
+<p>Valid: {{ nameInput.valid }}</p>
+
+<p>Edad {{ person.age }}</p>
+<input type="number" max="50" min="18" required #ageInput="ngModel" [(ngModel)]="person.age"/>
+<p>Valid: {{ ageInput.valid }}</p>
+
 
 
 <!-- EVENT BINDING - Click \-->
