@@ -1,5 +1,22 @@
+
+<!-- PROPERTY BINDING: [value]
+son específicos para propiedades de elemntos HTML, para configuración de propiedades\-->
+
+<h1>Propiedades</h1>
+<button [disabled]="buttonDisable">Enviar</button>
+<input types="text" [value]="name"/>
+<progress max="100" [value]="age"></progress>
+<img [src]="img" width="100px">
+
+<input types="text" [value]="person.name"/>
+<progress max="100" [value]="person.age"></progress>
+<img [src]="person.avatar" width="100px">
+
+<!-- STRING INTERPOLATION: {{}}
+sirve para ingresar contenido donde necesitamos renderizarlo (ingresar el contenido en un h1, p)\-->
+<hr>
 <h1>Hola mundo</h1>
 <h2>{{"Hola mundo".repeat(3)}}</h2>
 <p>3+3 = {{3+3}}</p>
 <h3>Hola, soy {{name}} y tengo {{age}}</h3>
-<img src={{img}} alt="imgen">
+<img src={{img}} alt="imgen"  width="100px">
