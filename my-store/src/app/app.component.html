@@ -1,3 +1,18 @@
+<!-- ngFor Sirve para iterar un array \-->
+<h1>*ngFor</h1>
+<input type="text" required [(ngModel)]="newName" />
+
+<button (click)="addName()">Add name</button>
+<ul>
+  <li *ngIf="names.length == 0"> NO hay nombres</li>
+  <li *ngFor="let name of names; index as i">
+    <!-- name: variable temporal (i), names: array a iterar \-->
+    {{i}} {{ name }}
+    <button (click)="deleteName(i)">Delete</button>
+  </li>
+</ul>
+
+
 <!-- ngIf \-->
 <h1>*ngIf</h1>
 <input type="text" required [(ngModel)]="person.name" />

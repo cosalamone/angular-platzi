@@ -15,6 +15,8 @@ export class AppComponent {
     age: 40,
     avatar: "https://www.w3schools.com/howto/img_avatar.png"
   }
+  names: string[] = ["constanza", "nicolas", "ana"];
+  newName = "";
 
   toggleButton() {
     this.buttonDisable = !this.buttonDisable;
@@ -33,4 +35,13 @@ export class AppComponent {
     const elemento = event.target as HTMLInputElement;
     this.person.name = elemento.value;
   }
+addName(){
+  this.names.push(this.newName);
+  this.newName = "";
+}
+
+deleteName(index:number){
+  this.names.splice(index,1);
+}
+
 }
