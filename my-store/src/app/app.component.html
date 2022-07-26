@@ -1,3 +1,34 @@
+<!-- cNgClass and NgStyle \-->
+<h1>cNgClass & NgStyle</h1>
+<input type="text" required #nameInput4="ngModel" [(ngModel)]="person.name" />
+<hr class="line-error"
+[ngClass]="{
+'valid': nameInput4.valid,
+'invalid': nameInput4.invalid
+}"/>
+<p class="message-error" [class.invalid]="nameInput4.invalid">
+  El campo es requerido
+</p>
+
+<div class="styles">
+  <div>
+    <input type="number" [(ngModel)]="box.width" />
+    <input type="number" [(ngModel)]="box.heigth" />
+    <input type="color" [(ngModel)]="box.background" />
+  </div>
+  <div>
+    <div [ngStyle]="{
+      'width.px': box.width,
+      'heigth.px': box.heigth,
+      'background-color': box.background,
+      'display': 'block'
+    }"></div>
+  </div>
+</div>
+
+<hr/>
+
+<!-- class and style\-->
 <h1>Class & styles</h1>
 <input type="text" required #nameInput2="ngModel" [(ngModel)]="person.name" />
 <p class="message-error" [class.invalid]="nameInput2.invalid">
@@ -8,9 +39,9 @@
 <input type="text" required #nameInput3="ngModel" [(ngModel)]="person.name" />
 <p [style.font-style]="nameInput3.invalid ? 'italic':'normal'">texto texto</p>
 
-<div class="styleDiv">
+<div class="styles">
   <div>
-    <input type="text"  [(ngModel)]="widthImg" />
+    <input type="text" [(ngModel)]="widthImg" />
   </div>
   <div>
     <img [src]="person.avatar" [style.width.px]="widthImg">
@@ -38,12 +69,12 @@
 <!-- ngFor para OBJETOS \-->
 <h1>*nfFor Objects</h1>
 <div class="products--grid">
-<div *ngFor="let product of products">
-  <img [src]="product.image" alt="">
-  <h2>{{product.price}}</h2>
-  <p>{{product.name}}</p>
+  <div *ngFor="let product of products">
+    <img [src]="product.image" alt="">
+    <h2>{{product.price}}</h2>
+    <p>{{product.name}}</p>
 
-</div>
+  </div>
 </div>
 <hr>
 
@@ -53,10 +84,9 @@
 
 <button (click)="addName()">Add name</button>
 <ul>
-  <li *ngIf="names.length == 0"> NO hay nombres</li>
+  <li *ngIf="names.length === 0"> NO hay nombres</li> <!-- name: variable temporal (i), names: array a iterar \-->
   <li *ngFor="let name of names; index as i">
-    <!-- name: variable temporal (i), names: array a iterar \-->
-    {{i}} {{ name }}
+  {{i}} {{name}}
     <button (click)="deleteName(i)">Delete</button>
   </li>
 </ul>
@@ -67,8 +97,8 @@
 <h1>*ngIf</h1>
 <input type="text" required [(ngModel)]="person.name" />
 
-<p *ngIf="person.name=='constanza'">My name is Constanza</p>
-<p *ngIf="person.name=='nicolas'&& person.age == 18; else elseBlock">My name is Nicolas</p>
+<p *ngIf="person.name==='constanza'">My name is Constanza</p>
+<p *ngIf="person.name==='nicolas'&& person.age == 18; else elseBlock">My name is Nicolas</p>
 
 <ng-template #elseBlock>
   <p>No se cumplieron los requisitos</p>
@@ -135,4 +165,4 @@ sirve para ingresar contenido donde necesitamos renderizarlo (ingresar el conten
 <h2>{{"Hola mundo".repeat(3)}}</h2>
 <p>3+3 = {{3+3}}</p>
 <h3>Hola, soy {{name}} y tengo {{age}}</h3>
-<img src={{img}} alt="imgen" width="100px">
+<img src= {{img}} width="100px">

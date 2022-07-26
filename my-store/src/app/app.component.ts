@@ -8,7 +8,7 @@ import { Product } from './product.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  widthImg=10
+  widthImg=10;
   name = 'Constanza';
   age = 18;
   img = "https://t2.ev.ltmcdn.com/es/posts/4/8/4/plantar_suculentas_como_hacerlo_2484_orig.jpg";
@@ -16,10 +16,15 @@ export class AppComponent {
   person = {
     name: "Nicolas",
     age: 40,
-    avatar: "https://www.w3schools.com/howto/img_avatar.png"
+    avatar: "https://www.w3schools.com/howto/img_avatar.png",
   }
   names: string[] = ["constanza", "nicolas", "ana"];
   newName = "";
+  box = {
+    width: 100,
+    heigth: 100,
+    background: "red"
+  };
   products: Product[] = [
     {
       name: "haworthia",
@@ -50,9 +55,8 @@ export class AppComponent {
       name: "sedum-burrito2",
       price: 600,
       image: "./assets/images/sedumburrito.jpg",
-    }
-  ]
-
+    },
+  ];
 
   toggleButton() {
     this.buttonDisable = !this.buttonDisable;
@@ -71,6 +75,7 @@ export class AppComponent {
     const elemento = event.target as HTMLInputElement;
     this.person.name = elemento.value;
   }
+
   addName() {
     this.names.push(this.newName);
     this.newName = "";
